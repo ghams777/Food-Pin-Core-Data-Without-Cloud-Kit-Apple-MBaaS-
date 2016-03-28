@@ -100,6 +100,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
                 restaurant.type = typeTextField.text
                 restaurant.location = locationTextField.text
                 restaurant.image = UIImagePNGRepresentation(imageView.image!)
+                
                 restaurant.isVisited = isVisited
                 
                 do {

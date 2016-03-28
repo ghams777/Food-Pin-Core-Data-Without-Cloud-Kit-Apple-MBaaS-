@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     /* TANPA OOP
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif",
@@ -27,6 +28,8 @@ class RestaurantTableViewController: UITableViewController {
 //    DENGAN OOP
     var restaurants: [Restaurant] = []
     
+    var fetchResultController: NSFetchedResultsController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +44,30 @@ class RestaurantTableViewController: UITableViewController {
         
         self.tableView.estimatedRowHeight = 80.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+//        Mengambil konten dari persisten store
+        var fetchRequest = NSFetchRequest(entityName: "Restaurant")
+        let sortDescriptors = NSSortDescriptor(key: "name", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptors]
+        
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+                restaurants = fetchResultController.fetchedObjects as! [Restaurant]
+            } catch let e as NSError {
+                    print(e.localizedDescription)
+            }
+            
+
+            
+        }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
