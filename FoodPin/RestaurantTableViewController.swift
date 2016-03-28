@@ -72,15 +72,15 @@ class RestaurantTableViewController: UITableViewController {
             let restaurant = restaurants[indexPath.row]
             
             cell.nameLabel.text = restaurant.name
-            cell.thumbnailImageView.image = UIImage(named: restaurant.image)
+            cell.thumbnailImageView.image = UIImage(data: restaurant.image)
             cell.locationLabel.text = restaurant.location
             cell.typeLabel.text = restaurant.type
-            cell.favorIconImageView.hidden = !restaurant.isVisited
+            cell.favorIconImageView.hidden = !restaurant.isVisited.boolValue
             
             cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
             cell.thumbnailImageView.clipsToBounds = true
             
-            if restaurant.isVisited {
+            if restaurant.isVisited.boolValue {
                 cell.accessoryType = .Checkmark
             } else {
                 cell.accessoryType = .None
