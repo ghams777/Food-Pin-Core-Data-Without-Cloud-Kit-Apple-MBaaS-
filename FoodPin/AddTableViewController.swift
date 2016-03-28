@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var restaurant: Restaurant!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -81,10 +84,30 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         }
         
         // If all fields are correctly filled in, extract the field value
-        print("Name: " + nameTextField.text!)
+        /*print("Name: " + nameTextField.text!)
         print("Type: " + typeTextField.text!)
         print("Location: " + locationTextField.text!)
-        print("Have you been here: " + (isVisited ? "Yes" : "No"))
+        print("Have you been here: " + (isVisited ? "Yes" : "No"))*/
+        
+        
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as?
+            AppDelegate)?.managedObjectContext {
+                
+                restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant",
+                    inManagedObjectContext: managedObjectContext) as! Restaurant
+                
+                restaurant.name = nameTextField.text
+                restaurant.type = typeTextField.text
+                restaurant.location = locationTextField.text
+                restaurant.image = UIImagePNGRepresentation(imageView.image!)
+                restaurant.isVisited = isVisited
+                
+                do {
+                    try managedObjectContext.save()
+                } catch let e as NSError {
+                    print("Error \(e.localizedDescription)")
+                }
+        }
         
         // Execute the unwind segue and go back to the home screen
         performSegueWithIdentifier("unwindToHomeScreen", sender: self)

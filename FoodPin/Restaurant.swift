@@ -21,7 +21,7 @@ class Restaurant: NSManagedObject {
     
 //    Constructor default
     /*
-    init(name: String, type: String, location: String, image: String, isVisited: Bool) {
+    init(name: String, type: String, location: String, image: NSData, isVisited: NSNumber) {
         
         self.name = name
         self.type = type
