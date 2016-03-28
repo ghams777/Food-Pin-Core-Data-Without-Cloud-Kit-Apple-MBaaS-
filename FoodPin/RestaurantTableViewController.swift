@@ -46,7 +46,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
 //        Mengambil konten dari persisten store
-        var fetchRequest = NSFetchRequest(entityName: "Restaurant")
+        let fetchRequest = NSFetchRequest(entityName: "Restaurant")
         let sortDescriptors = NSSortDescriptor(key: "name", ascending: true)
         
         fetchRequest.sortDescriptors = [sortDescriptors]
