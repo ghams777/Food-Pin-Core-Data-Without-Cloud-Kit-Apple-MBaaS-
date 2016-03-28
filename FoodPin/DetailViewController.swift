@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.restaurantImageView.image = UIImage(named: restaurant.image)
+        self.restaurantImageView.image = UIImage(data: restaurant.image)
         
         // Set table view background color
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
@@ -79,7 +79,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.valueLabel.text = restaurant.type
         case 3:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No, I've not"
+            cell.valueLabel.text = (restaurant.isVisited.boolValue) ? "Yes, I've been here before" : "No, I've not"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
