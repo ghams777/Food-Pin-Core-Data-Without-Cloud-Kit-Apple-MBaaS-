@@ -7,18 +7,20 @@
 //
 
 import Foundation
+import CoreData
 
-class Restaurant {
+class Restaurant: NSManagedObject {
 //    properties and methods
     
 //    Atribut / properties
-    var name: String = ""
-    var type: String = ""
-    var location: String = ""
-    var image: String = ""
-    var isVisited: Bool = false
+    @NSManaged var name: String!
+    @NSManaged var type: String!
+    @NSManaged var location: String!
+    @NSManaged var image: NSData!
+    @NSManaged var isVisited: NSNumber!
     
 //    Constructor default
+    /*
     init(name: String, type: String, location: String, image: String, isVisited: Bool) {
         
         self.name = name
@@ -27,7 +29,7 @@ class Restaurant {
         self.image = image
         self.isVisited = isVisited
         
-    }
+    }*/
     
     
     
