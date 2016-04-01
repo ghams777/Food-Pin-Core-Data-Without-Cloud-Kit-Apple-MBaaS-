@@ -99,9 +99,13 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             let restaurant = restaurants[indexPath.row]
             
             cell.nameLabel.text = restaurant.name
+            
             cell.thumbnailImageView.image = UIImage(data: restaurant.image)
+            
             cell.locationLabel.text = restaurant.location
+            
             cell.typeLabel.text = restaurant.type
+            
             cell.favorIconImageView.hidden = !restaurant.isVisited.boolValue
             
             cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
@@ -121,6 +125,34 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         return 1
     }
     
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch type {
+            
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+            
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+            
+        case .Update:
+            tableView.reloadRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+            
+        default :
+            tableView.reloadData()
+        }
+        
+        restaurants = controller.fetchedObjects as! [Restaurant]
+        
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates()
+    }
     
     /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -9,60 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodPin/DetailTableViewCell.swift"
-            timestampString = "480324050.731622"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "9"
-            endingLineNumber = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodPin.DetailTableViewCell.init (FoodPin.DetailTableViewCell.Type)(style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; FoodPin.DetailTableViewCell"
-                  moduleName = "FoodPin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Erawan/IOS/Managam/%20IOS%20Project/Food%20Pin%20Core%20Data/FoodPin/DetailTableViewCell.swift"
-                  timestampString = "480846612.697376"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "58">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodPin.DetailTableViewCell.init (FoodPin.DetailTableViewCell.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FoodPin.DetailTableViewCell&gt;"
-                  moduleName = "FoodPin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Erawan/IOS/Managam/%20IOS%20Project/Food%20Pin%20Core%20Data/FoodPin/DetailTableViewCell.swift"
-                  timestampString = "480846612.697668"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FoodPin/Restaurant.swift"
             timestampString = "480843031.364924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "init(name:type:location:image:isVisited:)"
-            landmarkType = "5">
+            landmarkName = "Restaurant"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
