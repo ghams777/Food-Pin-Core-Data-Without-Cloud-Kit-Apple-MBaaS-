@@ -45,8 +45,16 @@ class PageContentViewController: UIViewController {
     }
     
     @IBAction func nextScreen(sender: AnyObject) {
+        
         let pageViewController = self.parentViewController as! PageViewController
         pageViewController.forward(index)
+        
+    }
+    
+    @IBAction func closeScreen(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
     }
 
     /*
