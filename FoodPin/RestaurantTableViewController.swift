@@ -311,7 +311,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             
             let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             
-            return nameMatch != nil
+            let locationMatch = restaurant.location.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            
+            let typeMatch = restaurant.type.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            
+            return ( nameMatch != nil || locationMatch != nil || typeMatch != nil )
             
         })
         
