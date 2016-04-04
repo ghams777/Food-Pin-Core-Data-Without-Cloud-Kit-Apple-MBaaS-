@@ -315,7 +315,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             
             let typeMatch = restaurant.type.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             
-            return ( nameMatch != nil || locationMatch != nil || typeMatch != nil )
+            return nameMatch != nil || locationMatch != nil || typeMatch != nil
             
         })
         
