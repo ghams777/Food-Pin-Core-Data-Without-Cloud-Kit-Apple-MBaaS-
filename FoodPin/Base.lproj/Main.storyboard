@@ -654,6 +654,13 @@
             </objects>
             <point key="canvasLocation" x="-208" y="339"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="k7l-rC-sSe">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Yl5-8i-tad" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fY-J9-LwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="bad" width="64" height="64"/>
