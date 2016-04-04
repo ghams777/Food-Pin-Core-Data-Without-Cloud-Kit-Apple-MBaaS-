@@ -45,10 +45,16 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         
         // Menampilkan walkthrough screen untuk pertama kali
-        if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        
+        if hasViewedWalkthrough == false {
+            
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
             
             self.presentViewController(pageViewController, animated: true, completion: nil)
             
+            }
         }
         
         

@@ -55,7 +55,7 @@ class PageContentViewController: UIViewController {
         
         // Menggunakan NSUserDefaults supaya Tutorial Food Pin hanya sekali di tampilkan
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: "hasViewedWalkThrough")
+        defaults.setBool(true, forKey: "hasViewedWalkthrough")
         
         dismissViewControllerAnimated(true, completion: nil)
         
