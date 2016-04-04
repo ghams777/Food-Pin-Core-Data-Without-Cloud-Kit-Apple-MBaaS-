@@ -684,7 +684,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dec-lb-eg0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sub Heading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dec-lb-eg0">
                                 <rect key="frame" x="83" y="57" width="154" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -696,14 +696,38 @@
                                     <constraint firstAttribute="height" constant="367" id="3KC-2l-Joa"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2n-z3-cGh">
+                                <rect key="frame" x="85" y="86" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.32051120630000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ep5-3Y-mg9"/>
+                                    <constraint firstAttribute="width" constant="150" id="iH3-M1-Nxu"/>
+                                </constraints>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRk-5k-FnF">
+                                <rect key="frame" x="145" y="86" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="8dP-zp-Ojd"/>
+                                    <constraint firstAttribute="height" constant="30" id="vQa-RA-nQA"/>
+                                </constraints>
+                                <state key="normal" title="Forward" image="forward"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vRk-5k-FnF" firstAttribute="centerX" secondItem="htq-Fq-RWB" secondAttribute="centerX" id="0al-ge-4wS"/>
                             <constraint firstItem="dec-lb-eg0" firstAttribute="centerX" secondItem="htq-Fq-RWB" secondAttribute="centerX" id="3Hs-fe-ZWi"/>
                             <constraint firstItem="dec-lb-eg0" firstAttribute="top" secondItem="Nqs-iY-Gjt" secondAttribute="bottom" constant="20" id="Cbm-v8-bCR"/>
                             <constraint firstItem="W1V-ph-6vW" firstAttribute="top" secondItem="Kkm-PE-uZ0" secondAttribute="bottom" constant="-10" id="D7a-Qn-Mif"/>
+                            <constraint firstItem="i2n-z3-cGh" firstAttribute="centerX" secondItem="htq-Fq-RWB" secondAttribute="centerX" id="EeU-UQ-nu7"/>
                             <constraint firstItem="dec-lb-eg0" firstAttribute="leading" secondItem="htq-Fq-RWB" secondAttribute="leadingMargin" constant="20" id="OYH-Ej-hiO"/>
                             <constraint firstItem="Nqs-iY-Gjt" firstAttribute="top" secondItem="QSQ-bo-9bm" secondAttribute="bottom" constant="40" id="Pts-4a-71C"/>
+                            <constraint firstItem="vRk-5k-FnF" firstAttribute="top" secondItem="dec-lb-eg0" secondAttribute="bottom" constant="40" id="RpO-Ar-9lG"/>
+                            <constraint firstItem="i2n-z3-cGh" firstAttribute="top" secondItem="dec-lb-eg0" secondAttribute="bottom" constant="40" id="SGv-iN-QdP"/>
                             <constraint firstItem="Kkm-PE-uZ0" firstAttribute="width" secondItem="htq-Fq-RWB" secondAttribute="width" id="T9M-E2-RdA"/>
                             <constraint firstItem="dec-lb-eg0" firstAttribute="leading" secondItem="htq-Fq-RWB" secondAttribute="leadingMargin" constant="63" id="a4h-Gy-tqF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dec-lb-eg0" secondAttribute="trailing" constant="20" id="ep4-lj-see"/>
@@ -732,6 +756,7 @@
         <image name="close" width="64" height="64"/>
         <image name="email" width="64" height="64"/>
         <image name="facebook" width="64" height="64"/>
+        <image name="forward" width="64" height="64"/>
         <image name="good" width="64" height="64"/>
         <image name="great" width="64" height="64"/>
         <image name="heart" width="64" height="64"/>
