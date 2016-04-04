@@ -53,6 +53,10 @@ class PageContentViewController: UIViewController {
     
     @IBAction func closeScreen(sender: AnyObject) {
         
+        // Menggunakan NSUserDefaults supaya Tutorial Food Pin hanya sekali di tampilkan
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: "hasViewedWalkThrough")
+        
         dismissViewControllerAnimated(true, completion: nil)
         
     }
