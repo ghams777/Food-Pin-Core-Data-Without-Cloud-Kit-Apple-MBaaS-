@@ -79,6 +79,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     
+    // Forward to next slide
+    func forward(index: Int) {
+        
+        if let nextViewController = self.viewControllerAtIndex(index + 1) {
+            
+            setViewControllers([nextViewController], direction: .Forward, animated: true, completion: nil)
+            
+        }
+    }
     
     /*
     // MARK: - Navigation
