@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     /* TANPA OOP
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif",
@@ -31,6 +31,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     var fetchResultController: NSFetchedResultsController!
     
     var searchController: UISearchController!
+    
+    var searchResults: [Restaurant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +77,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         definesPresentationContext = true
         
         
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,7 +98,13 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // Return the number of rows in the section.
-        return self.restaurants.count
+        if searchController.active {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
+        
+        
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
@@ -103,7 +114,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 indexPath) as! CustomTableViewCell
             
             // Configure the cell...
-            let restaurant = restaurants[indexPath.row]
+            //let restaurant = restaurants[indexPath.row]
+            
+            let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             
             cell.nameLabel.text = restaurant.name
             
@@ -287,6 +300,30 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     
+    //Memfilter konten restaurant sesuai pencarian
+    func filterContentForSearch(searchText: String) {
+        
+        searchResults = restaurants.filter({ (restaurant: Restaurant) -> Bool in
+            
+            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            
+            return nameMatch != nil
+            
+        })
+        
+    }
+    
+    
+    //Mengupdate konten sesuai filter
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        let searchText = searchController.searchBar.text
+        filterContentForSearch(searchText!)
+        
+        tableView.reloadData()
+    }
+    
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -297,7 +334,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 
                 let destinationController = segue.destinationViewController as! DetailViewController
                 
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
@@ -306,15 +343,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
     }
     
-    /*
+
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return (searchController.active) ?false : true
     }
-    */
-
-    
     
 
 
