@@ -43,6 +43,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        
+        // Menampilkan walkthrough screen untuk pertama kali
+        if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+            
+            self.presentViewController(pageViewController, animated: true, completion: nil)
+            
+        }
+        
+        
         // Empty back button title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
@@ -83,6 +92,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        
         
     }
     
