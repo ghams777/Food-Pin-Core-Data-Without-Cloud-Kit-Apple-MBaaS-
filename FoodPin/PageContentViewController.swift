@@ -13,6 +13,7 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subHeadingLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var index: Int = 0
     var heading: String = ""
@@ -27,6 +28,10 @@ class PageContentViewController: UIViewController {
         headingLabel.text = heading
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: imageFile)
+
+        // set halaman page control
+        pageControl.currentPage = index
+        
     }
 
     override func didReceiveMemoryWarning() {
