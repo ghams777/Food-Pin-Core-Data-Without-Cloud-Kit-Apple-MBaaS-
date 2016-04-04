@@ -30,6 +30,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     var fetchResultController: NSFetchedResultsController!
     
+    var searchController: UISearchController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,9 +65,14 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                     print(e.localizedDescription)
             }
             
-
-            
         }
+        
+        
+        //Menambahkan search bar
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
         
         
     }
