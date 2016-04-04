@@ -137,10 +137,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
             
         case .Delete:
-            tableView.deleteRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             
         case .Update:
-            tableView.reloadRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+            tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             
         default :
             tableView.reloadData()
@@ -241,12 +241,35 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         shareAction.backgroundColor = UIColor(red: 255.0/255.0, green: 166.0/255.0, blue:
             51.0/255.0, alpha: 1.0)
         
-        
+        /*
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (UITableViewRowAction, NSIndexPath) -> Void in
             self.restaurants.removeAtIndex(indexPath.row)
             //            print(restaurantNames.count)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }*/
+        
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (UITableViewRowAction, NSIndexPath) -> Void in
+            
+            
+            //Delete the row from the data source
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+                
+                let restaurantToDelete = self.fetchResultController.objectAtIndexPath(NSIndexPath) as! Restaurant
+                
+                managedObjectContext.deleteObject(restaurantToDelete)
+                
+                do {
+                    try managedObjectContext.save()
+                    
+                } catch let e as NSError {
+                    print("Delete error \(e.localizedDescription)")
+                }
+                
+                
+                
+            }
             
         }
         
