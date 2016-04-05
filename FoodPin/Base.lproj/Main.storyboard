@@ -823,7 +823,7 @@
         <!--About-->
         <scene sceneID="Pt0-Vc-3nX">
             <objects>
-                <viewController id="sVW-LW-umw" sceneMemberID="viewController">
+                <viewController id="sVW-LW-umw" customClass="AboutViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lsj-Dg-1Vt"/>
                         <viewControllerLayoutGuide type="bottom" id="m99-SJ-TSa"/>
@@ -917,7 +917,7 @@
         <!--Web View Controller-->
         <scene sceneID="cHi-vY-Zpz">
             <objects>
-                <viewController title="Web View Controller" id="yK2-dy-hng" sceneMemberID="viewController">
+                <viewController title="Web View Controller" id="yK2-dy-hng" customClass="WebViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8SS-aV-T9k"/>
                         <viewControllerLayoutGuide type="bottom" id="8mM-2H-dtt"/>
