@@ -860,6 +860,11 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Contact Us"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt7-aV-4OI">
                                 <rect key="frame" x="60" y="376" width="200" height="30"/>
@@ -870,6 +875,11 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Visit our website"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="yK2-dy-hng" kind="push" id="BzA-TD-b3t"/>
                                 </connections>
@@ -938,6 +948,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FoodPin.com" id="6zc-qN-h03"/>
+                    <connections>
+                        <outlet property="webView" destination="sBx-IJ-2cd" id="EBA-Nl-VKu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgP-te-ZAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
