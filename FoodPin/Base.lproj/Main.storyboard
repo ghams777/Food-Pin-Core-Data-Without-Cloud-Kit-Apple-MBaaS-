@@ -831,7 +831,63 @@
                     <view key="view" contentMode="scaleToFill" id="5es-Hd-o3q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="zhP-dT-M1t">
+                                <rect key="frame" x="60" y="72" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="VMF-IU-ygT"/>
+                                    <constraint firstAttribute="width" constant="200" id="nEZ-qH-0PB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Got Question?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBE-Ta-wlP">
+                                <rect key="frame" x="105" y="280" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You're just a tap away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2p-G4-6Vj">
+                                <rect key="frame" x="92" y="309" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kif-BN-Ukb">
+                                <rect key="frame" x="60" y="338" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.32051120630000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8qj-pK-JSH"/>
+                                    <constraint firstAttribute="width" constant="200" id="fJR-p0-2qa"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Contact Us"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt7-aV-4OI">
+                                <rect key="frame" x="60" y="376" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.32051120630000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Uoe-9o-jhq"/>
+                                    <constraint firstAttribute="height" constant="30" id="u8l-37-g9j"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Visit our website"/>
+                                <connections>
+                                    <segue destination="yK2-dy-hng" kind="push" id="BzA-TD-b3t"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BBE-Ta-wlP" firstAttribute="centerX" secondItem="5es-Hd-o3q" secondAttribute="centerX" id="1IA-96-cyn"/>
+                            <constraint firstItem="B2p-G4-6Vj" firstAttribute="centerX" secondItem="5es-Hd-o3q" secondAttribute="centerX" id="8xS-5b-WiM"/>
+                            <constraint firstItem="zhP-dT-M1t" firstAttribute="top" secondItem="lsj-Dg-1Vt" secondAttribute="bottom" constant="20" id="KgF-jm-fIs"/>
+                            <constraint firstItem="B2p-G4-6Vj" firstAttribute="top" secondItem="BBE-Ta-wlP" secondAttribute="bottom" constant="10" id="OEz-t1-g6g"/>
+                            <constraint firstItem="kif-BN-Ukb" firstAttribute="top" secondItem="B2p-G4-6Vj" secondAttribute="bottom" constant="40" id="VSL-rb-ql7"/>
+                            <constraint firstItem="BBE-Ta-wlP" firstAttribute="top" secondItem="zhP-dT-M1t" secondAttribute="bottom" constant="20" id="Wl9-NX-xXy"/>
+                            <constraint firstItem="zhP-dT-M1t" firstAttribute="centerX" secondItem="5es-Hd-o3q" secondAttribute="centerX" id="b57-54-JiP"/>
+                            <constraint firstItem="Xt7-aV-4OI" firstAttribute="top" secondItem="kif-BN-Ukb" secondAttribute="bottom" constant="8" id="cWR-28-FmF"/>
+                            <constraint firstItem="Xt7-aV-4OI" firstAttribute="centerX" secondItem="5es-Hd-o3q" secondAttribute="centerX" id="fqv-B5-EVR"/>
+                            <constraint firstItem="kif-BN-Ukb" firstAttribute="centerX" secondItem="5es-Hd-o3q" secondAttribute="centerX" id="r46-hW-T0V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="zoJ-XB-wu5"/>
                 </viewController>
@@ -858,8 +914,38 @@
             </objects>
             <point key="canvasLocation" x="227" y="1588"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="cHi-vY-Zpz">
+            <objects>
+                <viewController title="Web View Controller" id="yK2-dy-hng" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8SS-aV-T9k"/>
+                        <viewControllerLayoutGuide type="bottom" id="8mM-2H-dtt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Dk-GD-YvP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBx-IJ-2cd">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sBx-IJ-2cd" firstAttribute="width" secondItem="6Dk-GD-YvP" secondAttribute="width" id="0L9-g5-cdk"/>
+                            <constraint firstItem="sBx-IJ-2cd" firstAttribute="height" secondItem="6Dk-GD-YvP" secondAttribute="height" id="dMk-oG-38i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FoodPin.com" id="6zc-qN-h03"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgP-te-ZAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="1588"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="about" width="1024" height="1024"/>
         <image name="bad" width="64" height="64"/>
         <image name="cafedeadend" width="640" height="640"/>
         <image name="cafeloisl" width="640" height="640"/>
