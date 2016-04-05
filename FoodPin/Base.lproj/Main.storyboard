@@ -803,11 +803,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6od-Yd-HEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Navigation Controller-->
+        <!--Feed-->
         <scene sceneID="jOF-E7-cpZ">
             <objects>
                 <navigationController id="08P-5N-8wm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="IEE-FN-5gL"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed_tabicon" id="IEE-FN-5gL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tvA-9X-sOh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -872,6 +872,7 @@
         <image name="close" width="64" height="64"/>
         <image name="email" width="64" height="64"/>
         <image name="facebook" width="64" height="64"/>
+        <image name="feed_tabicon" width="32" height="32"/>
         <image name="forward" width="64" height="64"/>
         <image name="good" width="64" height="64"/>
         <image name="great" width="64" height="64"/>
