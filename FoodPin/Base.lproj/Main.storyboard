@@ -123,7 +123,7 @@
         <!--Detail View Controller-->
         <scene sceneID="WU9-zk-p4B">
             <objects>
-                <viewController id="Hxu-qh-qGd" customClass="DetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Hxu-qh-qGd" customClass="DetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aql-dn-Obv"/>
                         <viewControllerLayoutGuide type="bottom" id="yus-tw-gcw"/>
