@@ -92,8 +92,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         definesPresentationContext = true
         
         // Custom search bar
-        searchController.searchBar.placeholder = "Search your restaurant"
-        searchController.searchBar.prompt = "Quick Search"
+        searchController.searchBar.tintColor = UIColor.blackColor()
+        //searchController.searchBar.placeholder = "Search your restaurant"
+        //searchController.searchBar.prompt = "Quick Search"
         searchController.searchBar.barTintColor = UIColor(red: 231.0/255.0, green: 95.0/255.0, blue: 53.0/255.0, alpha: 0.3)
         
         searchController.searchResultsUpdater = self
